@@ -2,7 +2,8 @@ class Movie < ApplicationRecord
 has_many :bookmarks
 belongs_to :lists, through: :bookmarks
 before_destroy :check_bookmarks
-validates:
+validates :title, presence: true
+
 
 
 
