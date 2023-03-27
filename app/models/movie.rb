@@ -1,15 +1,6 @@
 class Movie < ApplicationRecord
-has_many :bookmarks
-belongs_to :lists, through: :bookmarks
-before_destroy :check_bookmarks
-validates:
+  has_many :bookmarks
 
-
-
-  # def check_bookmarks
-  #   @movie = Movie.find(params[:id])
-  #   unless @movie.bookmarks.empty?
-  #     @movie.destroy
-  # end
-
+  validates :title, presence: true, uniqueness: true
+  validates :overview, presence: true
 end
